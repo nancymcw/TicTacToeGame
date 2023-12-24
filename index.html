@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tic tac toe</title>
+    <!--Here I link the stylesheets as the actual css page I made and also link to bootstrap locally.-->
+    <link rel="stylesheet" href="tictactoe.css" />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+  </head>
+  <body>
+    <!--First I make my alert / result divs styled with bootstrap for whether or not there is a tie or a win.-->
+    <div
+      id="resultAlert"
+      class="alert alert-dismissible fade show"
+      role="alert"
+      style="display: none"
+    >
+      <strong id="resultText"></strong>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+        onclick="hideResultAlert()"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <!-- Then comes the actual game board including title and some text indicating the player's turn.
+    I decided that each gridcell would be defined by numbers 0 through 8. -->
+    <div class="container">
+      <center>
+        <h2 id="gameName">Tic Tac Toe</h2>
+        <div id="turnIndicator">Player X's Turn</div>
+      </center>
+
+      <div id="ticTacToeGrid">
+        <div class="grid-cell" onclick="handleClick(0)"></div>
+        <div class="grid-cell" onclick="handleClick(1)"></div>
+        <div class="grid-cell" onclick="handleClick(2)"></div>
+        <div class="grid-cell" onclick="handleClick(3)"></div>
+        <div class="grid-cell" onclick="handleClick(4)"></div>
+        <div class="grid-cell" onclick="handleClick(5)"></div>
+        <div class="grid-cell" onclick="handleClick(6)"></div>
+        <div class="grid-cell" onclick="handleClick(7)"></div>
+        <div class="grid-cell" onclick="handleClick(8)"></div>
+      </div>
+      <center>
+        <br />
+        <!--Then a bootstrap styled button for clearing the board, calling my clearBoard function.-->
+        <button id="clearButton" class="btn btn-danger" onclick="clearBoard()">
+          Clear Board
+        </button>
+      </center>
+    </div>
+    <!--My script source callings for jquery and my actual javascript page I made.-->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="TICTACTOE.js"></script>
+  </body>
+</html>
